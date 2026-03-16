@@ -1,42 +1,42 @@
 #include <iostream>
-#include <fstream>
 #include "../include/Rational.h"
-
-using namespace std;
 
 Rational::Rational (int numerator, int denominator) {
   mNumerator = numerator;
   mDenominator = denominator;
 }
 
-void Rational::write (ostream &rcOut) const {
+void Rational::write (std::ostream& rcOut) const {
   rcOut << mNumerator << " / " << mDenominator;
 }
 
-bool Rational::read (istream &rcIn) {
+bool Rational::read (std::istream& rcIn) {
   char slash;
-  bool bIsEOF;
+  bool bSuccess;
 
   if (rcIn >> mNumerator >> slash >> mDenominator) {
-    bIsEOF = false;
+    bSuccess = true;
   }
   else {
-    bIsEOF = true;
+    bSuccess = false;
   }
 
-  return bIsEOF;
+  return bSuccess;
 }
 
-Rational Rational::add (Rational &rcRational) const {
+Rational Rational::add (const Rational& rcRational) const {
   int commonDenominator = mDenominator * rcRational.mDenominator;
 
-  return Rational (mNumerator * (commonDenominator / mDenominator) +
-         rcRational.mNumerator * (commonDenominator / rcRational.mDenominator),
-         commonDenominator);
+  return Rational (
+    mNumerator * (commonDenominator / mDenominator) +
+    rcRational.mNumerator * (commonDenominator / rcRational.mDenominator),
+    commonDenominator
+  );
 }
 
-Rational Rational::multiply (Rational &rcRational) const {
-
-  return Rational (mNumerator * rcRational.mNumerator,
-                   mDenominator * rcRational.mDenominator);
+Rational Rational::multiply (const Rational& rcRational) const {
+  return Rational (
+    mNumerator * rcRational.mNumerator,
+    mDenominator * rcRational.mDenominator
+  );
 }

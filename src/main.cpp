@@ -4,14 +4,14 @@
 // Date:         
 // Class:        
 // Assignment:   
-// Purpose:      
-//
+// Purpose:      Demonstrate Rational operations
 //******************************************************************************
 
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include "../include/Rational.h"
+//#include "../include/RationalSet.h"
 
 void writeHeading (std::ostream& rcOut, const std::string& rcDecorate,
                    const std::string& rcTitle);
@@ -52,7 +52,41 @@ int main () {
   cR1.multiply (cR2).write (std::cout);
 
   std::cout << std::endl << std::endl;
-  std::cout << "Program Completed" << std::endl;
+
+  // ------------------------------------------------------------------
+  // RationalSet demo (for later in the lab)
+  // ------------------------------------------------------------------
+
+  /*
+  RationalSet cSet;
+
+  cSet.add (cR1);
+  cSet.add (cR2);
+
+  std::cout << "Set contents: ";
+  cSet.write (std::cout);
+  std::cout << std::endl;
+  */
+
+  // Optional - Very Cool!!!
+
+  /*
+  RationalSet cSet;
+
+  std::cout << "Enter a rational set (example: {1/2, 3/4}): ";
+  if (!cSet.read(std::cin)) {
+    std::cout << "Invalid set format." << std::endl;
+    return EXIT_FAILURE;
+  }
+
+  std::cout << "You entered: ";
+  cSet.write(std::cout);
+  std::cout << std::endl;
+
+  std::cout << "Set size: " << cSet.size() << std::endl;
+  */
+
+  std::cout << std::endl << "Program Completed" << std::endl;
 
   return EXIT_SUCCESS;
 }

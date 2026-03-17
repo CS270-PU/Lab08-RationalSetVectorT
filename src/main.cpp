@@ -54,14 +54,13 @@ int main () {
   std::cout << std::endl << std::endl;
 
   // ------------------------------------------------------------------
- // RationalSet demo (build incrementally)
- // ------------------------------------------------------------------
-
-  RationalSet cSet;
+  // RationalSet demo (build incrementally)
+  // ------------------------------------------------------------------
 
   // TODO #1: Test constructor + write()
   // Expected: {}
 
+  // RationalSet cSet;
   // std::cout << "Initial set: ";
   // cSet.write (std::cout);
   // std::cout << std::endl;
@@ -107,7 +106,7 @@ int main () {
   // }
 
 
-  // TODO #6:
+  // TODO #6 Test read ():
 
   // RationalSet cInputSet;
 

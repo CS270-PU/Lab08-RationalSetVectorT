@@ -11,10 +11,10 @@
 #include <iostream>
 #include <string>
 #include "../include/Rational.h"
-//#include "../include/RationalSet.h"
+#include "../include/RationalSet.h"
 
 void writeHeading (std::ostream& rcOut, const std::string& rcDecorate,
-                   const std::string& rcTitle);
+  const std::string& rcTitle);
 
 int main () {
   Rational cR1;
@@ -54,37 +54,74 @@ int main () {
   std::cout << std::endl << std::endl;
 
   // ------------------------------------------------------------------
-  // RationalSet demo (for later in the lab)
-  // ------------------------------------------------------------------
+ // RationalSet demo (build incrementally)
+ // ------------------------------------------------------------------
 
-  /*
   RationalSet cSet;
 
-  cSet.add (cR1);
-  cSet.add (cR2);
+  // TODO #1: Test constructor + write()
+  // Expected: {}
 
-  std::cout << "Set contents: ";
-  cSet.write (std::cout);
-  std::cout << std::endl;
-  */
+  // std::cout << "Initial set: ";
+  // cSet.write (std::cout);
+  // std::cout << std::endl;
 
-  // Optional - Very Cool!!!
 
-  /*
-  RationalSet cSet;
+  // TODO #2: Test isIn() on empty set
+  // Expected: cR1 is NOT in the set
 
-  std::cout << "Enter a rational set (example: {1/2, 3/4}): ";
-  if (!cSet.read(std::cin)) {
-    std::cout << "Invalid set format." << std::endl;
-    return EXIT_FAILURE;
-  }
+  // if (cSet.isIn (cR1)) {
+  //   std::cout << "cR1 is in the set" << std::endl;
+  // }
+  // else {
+  //   std::cout << "cR1 is NOT in the set" << std::endl;
+  // }
 
-  std::cout << "You entered: ";
-  cSet.write(std::cout);
-  std::cout << std::endl;
 
-  std::cout << "Set size: " << cSet.size() << std::endl;
-  */
+  // TODO #3: Test add() + write()
+  // Expected: {1/2, 2/3}
+
+  // cSet.add (cR1);
+  // cSet.add (cR2);
+  // cSet.add (cR1);  // duplicate, should NOT be added
+
+  // std::cout << "After adding elements: ";
+  // cSet.write (std::cout);
+  // std::cout << std::endl;
+
+
+  // TODO #4: Test size()
+  // Expected: 2
+
+  // std::cout << "Set size: " << cSet.size () << std::endl;
+
+
+  // TODO #5: Test isIn() again after adds
+  // Expected: cR1 is in the set
+
+  // if (cSet.isIn (cR1)) {
+  //   std::cout << "cR1 is in the set" << std::endl;
+  // }
+  // else {
+  //   std::cout << "cR1 is NOT in the set" << std::endl;
+  // }
+
+
+  // TODO #6:
+
+  // RationalSet cInputSet;
+
+  // std::cout << "Enter a rational set: ";
+  // if (!cInputSet.read (std::cin)) {
+  //   std::cout << "Invalid set format." << std::endl;
+  // }
+  // else {
+  //   std::cout << "You entered: ";
+  //   cInputSet.write (std::cout);
+  //   std::cout << std::endl;
+
+  //   std::cout << "Set size: " << cInputSet.size () << std::endl;
+  // }
 
   std::cout << std::endl << "Program Completed" << std::endl;
 
@@ -92,6 +129,6 @@ int main () {
 }
 
 void writeHeading (std::ostream& rcOut, const std::string& rcDecorate,
-                   const std::string& rcTitle) {
+  const std::string& rcTitle) {
   rcOut << rcDecorate << rcTitle << rcDecorate;
 }

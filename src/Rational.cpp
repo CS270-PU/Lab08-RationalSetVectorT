@@ -7,7 +7,7 @@ Rational::Rational (int numerator, int denominator) {
 }
 
 void Rational::write (std::ostream& rcOut) const {
-  rcOut << mNumerator << " / " << mDenominator;
+  rcOut << mNumerator << "/" << mDenominator;
 }
 
 bool Rational::read (std::istream& rcIn) {
@@ -39,4 +39,9 @@ Rational Rational::multiply (const Rational& rcRational) const {
     mNumerator * rcRational.mNumerator,
     mDenominator * rcRational.mDenominator
   );
+}
+
+bool Rational::isEqual (const Rational& rcRational) const {
+  return mNumerator * rcRational.mDenominator ==
+    mDenominator * rcRational.mNumerator;
 }

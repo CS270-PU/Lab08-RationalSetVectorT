@@ -11,6 +11,7 @@ public:
   bool read (std::istream& rcIn);
   Rational add (const Rational& rcRational) const;
   Rational multiply (const Rational& rcRational) const;
+  bool isEqual (const Rational& rcRational) const;
 
 private:
   int mNumerator;

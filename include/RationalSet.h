@@ -48,7 +48,7 @@ public:
 
 private:
 
-  std::vector<Rational> mRationals;
+  std::vector<Rational> mcRationals;
 
 };
 
